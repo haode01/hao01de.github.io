@@ -5,12 +5,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>努努力世界更美丽</title>
+    <title>多线程 - 努努力世界更美丽</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Fechin,"> 
-    
+    <meta name="description" content="
+程序(programm)概念：是为完成特定任务、用某种语言编写的一组指令的集合。即指一段静态的代码。
+
+进程(process)概念：程序的一次执行过程，或是正在运行的一个程序。说明：进程作为资源分,"> 
     <meta name="author" content="某人"> 
     <link rel="alternative" href="atom.xml" title="努努力世界更美丽" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -23,118 +26,84 @@
 <body class="loading">
     <span id="config-title" style="display:none">努努力世界更美丽</span>
     <div id="loader"></div>
-    <div class="nav">
-    <ul id="menu-menu" class="menu">
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="//" title="首页" target="_blank" rel="noopener">首页</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/categories/" title="分类" target="_blank" rel="noopener">分类</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/tags/" title="标签" target="_blank" rel="noopener">标签</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/archives/" title="归档" target="_blank" rel="noopener">归档</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/about/" title="关于" target="_blank" rel="noopener">关于</a>
-        </li>
-        
-    </ul>
-	<span class="target"></span>
-	<center>
-	<div class="hitokoto">
-		<span class="typed" id="hitokoto" data-st="true"></span>
-	</div>
-	</center>
-	
-	<p class="footerlinks">
-		<a href="#" class="iconfont icon-null"></a>
-		
-            <a href="/haode01.github.io" title="github" class="iconfont icon-github" target="_blank" rel="noopener"> </a>
-        
-            <a href="/img/logo.png%20:ntmd118" title="wechat" class="iconfont icon-wechat" target="_blank" rel="noopener"> </a>
-        
-            <a href="mailto:1441464537@qq.com" title="email" class="iconfont icon-email" target="_blank" rel="noopener"> </a>
-        
-		<a href="#" class="iconfont icon-null"></a>
-	</p>
-	
-    <p id="copyright">
-        &copy; 2021 某人.
-        <span> | </span>Powered by <a href="https://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
-        <span> | </span>Theme <a href="https://github.com/Fechin/hexo-theme-diaspora" title="Diaspora" target="_blank" rel="noopener">Diaspora</a> by Fechin
-		
-    </p>
-</div>
-
-<div id="container">
-    
-<div id="screen">
-    <div id="mark">
-        <div class="layer" data-depth="0.4">
-            <img src="/img/welcome-cover.jpg" id="cover" crossorigin="anonymous" width="1920" height="1080">
-        </div>
-    </div>
-    <div id="vibrant">
-        <svg viewBox="0 0 2880 1620" height="100%" preserveAspectRatio="xMaxYMax slice">
-            <polygon opacity="0.7" points="2000,1620 0,1620 0,0 600,0 "/>
-        </svg>
-        <div></div>
-    </div>
-    <div id="header">
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://chenzilin.cn"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">多线程</h3>
+    <div class="social">
         <div>
-            <a class="image-logo" href="/"></a>
-			
-			<div class="iconfont icon-search switchsearch" href="/search/" title="搜索"></div>
-			
-            <div class="iconfont icon-menu switchmenu"></div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
         </div>
     </div>
-    
-    <div id="post0">
-        <p>十一月 06, 2021</p>
-        <h2><a href="/2021/11/06/%E6%B3%9B%E5%9E%8B/" title="泛型" class="posttitle">泛型</a></h2>
-        <p class="summary">
-为什么要有泛型 用于分类，可高效分类，可规定类的属性的具体类，和方法返回的值和方法参数
-
-
-
-在集合中使用泛型之...</p>
-    </div>
-    
+    <div class="scrollbar"></div>
 </div>
 
-    <div id="primary">
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">多线程</h1>
+        <div class="stuff">
+            <span>十一月 05, 2021</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Java%E7%AC%94%E8%AE%B0/" rel="tag">Java笔记</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <ol>
+<li><p>程序(programm)<br>概念：是为完成特定任务、用某种语言编写的一组指令的集合。即指一段静态的代码。</p>
+</li>
+<li><p>进程(process)<br>概念：程序的一次执行过程，或是正在运行的一个程序。<br>说明：进程作为资源分配的单位，系统在运行时会为每个进程分配不同的内存区域</p>
+</li>
+<li><p>线程(thread)<br>概念：进程可进一步细化为线程，是一个程序内部的一条执行路径。<br>说明：线程作为调度和执行的单位，每个线程拥独立的运行栈和程序计数器(pc)，线程切换的开销小。</p>
+</li>
+</ol>
+<p>补充：<br>内存结构：</p>
+<p>进程可以细化为多个线程。<br>每个线程，拥有自己独立的：栈、程序计数器<br>多个线程，共享同一个进程中的结构：方法区、堆。</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='https://www.ytmp3.cn/down/47654.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
         
-<div class="post">
-    <a href="/2021/11/05/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" title="多线程">
-        <img src="/img/cover.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>十一月 05, 2021</p>
-        <h3><a href="/2021/11/05/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" title="多线程" class="posttitle">多线程</a></h3>
-        <p>
-程序(programm)概念：是为完成特定任务、用某种语言编写的一组指令的集合。即指一段静态的代码。
-
-进程(process)概念：程序的一次执行过程，...</p>
-    </div>
-</div>
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
 
 
     </div>
     
+        <div class='side'>
+				
+        </div>
+    
 </div>
-<div id="preview"></div>
 
 
-
+    </div>
+</div>
 </body>
 
 

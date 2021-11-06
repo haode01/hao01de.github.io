@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>泛型</title>
+    <url>/2021/11/06/%E6%B3%9B%E5%9E%8B/</url>
+    <content><![CDATA[<ul>
+<li><em><strong>为什么要有泛型</strong></em><br> <em>用于分类，可高效分类，可规定类的属性的具体类，和方法返回的值和方法参数</em></li>
+</ul>
+<hr>
+<ul>
+<li><em><strong>在集合中使用泛型之前的情况</strong></em><br><em>问题一：类型不安全可以任意添加类型数据问题二：强制zhuan’hu时：可能出现ClassCastExceotion</em></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;添加成绩时</span><br><span class="line">          ArrayList arrayList &#x3D; new ArrayList();</span><br><span class="line">          arrayList .add(10);</span><br><span class="line">          arrayList .add(20);</span><br><span class="line">          arrayList .add(30);</span><br><span class="line">          arrayList .add(40);</span><br><span class="line">          arrayList .add(50);</span><br><span class="line">          arrayList .add(&quot;juad&quot;);</span><br><span class="line">          for (Object  o:</span><br><span class="line">               arrayList ) &#123;</span><br><span class="line">               Integer s &#x3D; (Integer)  o;&#x2F;&#x2F;强转发生错误</span><br><span class="line">              System.out.println(o);</span><br></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li><em><strong>在集合中使用泛型后</strong></em><br>限制了数据添加add（）的参数。就不会出现问题一，二，编译时就会检查数据类型</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>多线程</title>
+    <url>/2021/11/05/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
+    <content><![CDATA[<ol>
+<li><p>程序(programm)<br>概念：是为完成特定任务、用某种语言编写的一组指令的集合。即指一段静态的代码。</p>
+</li>
+<li><p>进程(process)<br>概念：程序的一次执行过程，或是正在运行的一个程序。<br>说明：进程作为资源分配的单位，系统在运行时会为每个进程分配不同的内存区域</p>
+</li>
+<li><p>线程(thread)<br>概念：进程可进一步细化为线程，是一个程序内部的一条执行路径。<br>说明：线程作为调度和执行的单位，每个线程拥独立的运行栈和程序计数器(pc)，线程切换的开销小。</p>
+</li>
+</ol>
+<p>补充：<br>内存结构：</p>
+<p>进程可以细化为多个线程。<br>每个线程，拥有自己独立的：栈、程序计数器<br>多个线程，共享同一个进程中的结构：方法区、堆。</p>
+]]></content>
+      <categories>
+        <category>财富密码</category>
+      </categories>
+      <tags>
+        <tag>Java笔记</tag>
+      </tags>
+  </entry>
+</search>
