@@ -1,49 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>泛型</title>
-    <url>/2021/11/06/%E6%B3%9B%E5%9E%8B/</url>
-    <content><![CDATA[<ul>
-<li><em><strong>为什么要有泛型</strong></em><br> <em>用于分类，可高效分类，可规定类的属性的具体类，和方法返回的值和方法参数</em></li>
-</ul>
-<hr>
-<ul>
-<li><em><strong>在集合中使用泛型之前的情况</strong></em><br><em>问题一：类型不安全可以任意添加类型数据问题二：强制zhuan’hu时：可能出现ClassCastExceotion</em></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;添加成绩时</span><br><span class="line">          ArrayList arrayList &#x3D; new ArrayList();</span><br><span class="line">          arrayList .add(10);</span><br><span class="line">          arrayList .add(20);</span><br><span class="line">          arrayList .add(30);</span><br><span class="line">          arrayList .add(40);</span><br><span class="line">          arrayList .add(50);</span><br><span class="line">          arrayList .add(&quot;juad&quot;);</span><br><span class="line">          for (Object  o:</span><br><span class="line">               arrayList ) &#123;</span><br><span class="line">               Integer s &#x3D; (Integer)  o;&#x2F;&#x2F;强转发生错误</span><br><span class="line">              System.out.println(o);</span><br></pre></td></tr></table></figure>
-<hr>
-<ul>
-<li><em><strong>在集合中使用泛型后</strong></em><br>限制了数据添加add（）的参数。就不会出现问题一，二，编译时就会检查数据类型<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ArrayList&lt;Integer&gt; integers &#x3D; new ArrayList&lt;&gt;();</span><br><span class="line">        integers.add(12);</span><br><span class="line">        integers.add(13);</span><br><span class="line">        integers.add(15);</span><br><span class="line">        integers.add(&quot;211&quot;); &#x2F;&#x2F;编译时发生错误</span><br></pre></td></tr></table></figure>
-<em>编译时，会检查数据类型，保证数据安全。还避免了强转（用增强for循环时），对于Map测试:可指定key，value</em>  </li>
-</ul>
-<p><em>泛型的嵌套</em></p>
-]]></content>
+<search> 
+  
+  
+    
+    <entry>
+      <title>泛型</title>
+      <link href="/2021/11/06/%E6%B3%9B%E5%9E%8B/"/>
+      <url>/2021/11/06/%E6%B3%9B%E5%9E%8B/</url>
+      
+        <content type="html"><![CDATA[<ul><li><em><strong>为什么要有泛型</strong></em><br> 用于分类，可高效分类，可规定类的属性的具体类，和方法返回的值和方法参数</li></ul><hr><ul><li><em><strong>在集合中使用泛型之前的情况</strong></em><br>问题一：类型不安全可以任意添加类型数据问题二：强制zhuan’hu时：可能出现ClassCastExceotion</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;添加成绩时</span><br><span class="line">          ArrayList arrayList &#x3D; new ArrayList();</span><br><span class="line">          arrayList .add(10);</span><br><span class="line">          arrayList .add(20);</span><br><span class="line">          arrayList .add(30);</span><br><span class="line">          arrayList .add(40);</span><br><span class="line">          arrayList .add(50);</span><br><span class="line">          arrayList .add(&quot;juad&quot;);</span><br><span class="line">          for (Object  o:</span><br><span class="line">               arrayList ) &#123;</span><br><span class="line">               Integer s &#x3D; (Integer)  o;&#x2F;&#x2F;强转发生错误</span><br><span class="line">              System.out.println(o);</span><br></pre></td></tr></table></figure><hr><ul><li><em><strong>在集合中使用泛型后</strong></em><br>限制了数据添加add（）的参数。就不会出现问题一，二，编译时就会检查数据类型</li></ul><ol><li>内嵌式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String,Integer&gt; hashMap &#x3D; new HashMap();</span><br><span class="line">           hashMap.put(&quot;das&quot;,12);</span><br><span class="line">           hashMap.put(&quot;da2&quot;,12);</span><br><span class="line">           hashMap.put(&quot;adasd&quot;,12);</span><br><span class="line">           hashMap.put(&quot;s65&quot;,12);</span><br><span class="line">       Set&lt;Map.Entry&lt;String, Integer&gt;&gt; entries &#x3D; hashMap.entrySet();</span><br><span class="line">       Iterator&lt;Map.Entry&lt;String, Integer&gt;&gt; iterator &#x3D; entries.iterator();</span><br><span class="line">       while(iterator.hasNext())&#123;</span><br><span class="line">           Map.Entry&lt;String, Integer&gt; next &#x3D; iterator.next();</span><br><span class="line">           System.out.println(next);</span><br></pre></td></tr></table></figure></li></ol><ul><li><em><strong>泛型的使用</strong></em><br>1.Jdk5.0出现的<br>2.总结：<br>①集合接口或集合在jdk5.0时都修改为带泛型的结构<br>②在实例化集合时，可以指明具体的泛型类型；<br>③指明完后，在集合类或接口中凡是定义类或接口时，内部结构（），都指定实例化类型<br>④泛型必须是类，比如包装类，int不行</li></ul><ul><li><em><strong>自定义泛型类，泛型接口，泛型方法</strong></em><br><strong>自定义泛型类</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">public class genericTest &lt;T&gt;&#123;</span><br><span class="line">           private  String name;</span><br><span class="line">           private int id;</span><br><span class="line">            private T userT;</span><br><span class="line"></span><br><span class="line">  public genericTest() &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  public genericTest(String name, int id, T userT) &#123;</span><br><span class="line">      this.name &#x3D; name;</span><br><span class="line">      this.id &#x3D; id;</span><br><span class="line">      this.userT &#x3D; userT;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  public String getName() &#123;</span><br><span class="line">      return name;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @Override</span><br><span class="line">  public String toString() &#123;</span><br><span class="line">      return &quot;genericTest&#123;&quot; +</span><br><span class="line">              &quot;name&#x3D;&#39;&quot; + name + &#39;\&#39;&#39; +</span><br><span class="line">              &quot;, id&#x3D;&quot; + id +</span><br><span class="line">              &quot;, userT&#x3D;&quot; + userT +</span><br><span class="line">              &#39;&#125;&#39;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  public void setName(String name) &#123;</span><br><span class="line">      this.name &#x3D; name;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  public int getId() &#123;</span><br><span class="line">      return id;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  public void setId(int id) &#123;</span><br><span class="line">      this.id &#x3D; id;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  public T getUserT() &#123;</span><br><span class="line">      return userT;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  public void setUserT(T userT) &#123;</span><br><span class="line">      this.userT &#x3D; userT;</span><br><span class="line">  &#125;&#125;</span><br></pre></td></tr></table></figure>注意：  </li></ul><ul><li><p>不指明泛型就默认为Object类</p></li><li><p>要求如果定义泛型。建议在实例化时用泛型</p></li><li><p>子类泛型父类时如果指明父类泛型，子类实例化不需要指明泛型  </p></li><li><p>泛型类可有多个参数，例&lt;K,V&gt;</p></li><li><p>泛型不同不能赋值</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;String&gt; strings &#x3D; new ArrayList&lt;&gt;();</span><br><span class="line">       ArrayList&lt;Integer&gt; strings1 &#x3D; new ArrayList&lt;&gt;();</span><br><span class="line">       strings &#x3D; strings1 ;</span><br></pre></td></tr></table></figure><p>编译时就会报错，泛型不同编译时会检查泛型类型，导致无法赋值</p></li><li><p>泛型要用就一值用，不用就一直不用；</p></li><li><p>静态方法不能用泛型在泛型类中，静态方法早于泛型</p></li><li><p>异常类不能是泛型</p></li><li><p>泛型数组 ：T[] arr = (T[])new Object[10] (编译可通过，实际创建的还是Object);new 后面要有具体的类，不能是T[10]; </p></li></ul><p><strong>泛型方法</strong></p><ul><li>方法中参数不确定，没在创建实例化时声明，与类是不是泛型类没关系<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public &lt;E&gt; List&lt;E&gt; test(E[] a)&#123;</span><br><span class="line">       List&lt;E&gt; list&#x3D;new ArrayList&lt;&gt;();</span><br><span class="line">       for (E o:</span><br><span class="line">            a) &#123;</span><br><span class="line">            list.add(o);</span><br><span class="line">       &#125;</span><br><span class="line">       return list;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></li><li>泛型方法可声明为静态的，泛型是在调用方法时确定的</li></ul><ul><li><p><em><strong>泛型在继承方面的体现</strong></em><br>泛型不同，及时泛型有继承性，泛型类实例化不具备子父类关系。<br>导致的问题：有些代码得写很多次。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> public void test4()&#123;</span><br><span class="line">    ArrayList&lt;String&gt; strings &#x3D; new ArrayList&lt;&gt;();</span><br><span class="line">    ArrayList&lt;Integer&gt; strings1 &#x3D; new ArrayList&lt;&gt;();</span><br><span class="line">                                            show(strings );</span><br><span class="line">                                            show(strings1 );&#x2F;&#x2F;无法使用一些二相同的功能</span><br><span class="line">&#125;</span><br><span class="line">public void show(ArrayList&lt;String&gt; arrayList)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p> <em><strong>通配符</strong></em><br>通配符的出现解决了上面出现的，相同功能没法一起使用的问题。类似于创建一个父类；</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> public void test4()&#123;</span><br><span class="line">        ArrayList&lt;String&gt; strings &#x3D; new ArrayList&lt;&gt;();</span><br><span class="line">        ArrayList&lt;Integer&gt; strings1 &#x3D; new ArrayList&lt;&gt;();</span><br><span class="line">&#x2F;&#x2F;                                                show(strings );</span><br><span class="line">&#x2F;&#x2F;    </span><br><span class="line">&#x2F;&#x2F;                                                show(strings1 );&#x2F;&#x2F;无法使用一些二相同的功能</span><br><span class="line">        ArrayList&lt;?&gt; objects &#x3D; new ArrayList&lt;&gt;();</span><br><span class="line">        objects&#x3D;strings ;</span><br><span class="line">        show(objects );</span><br><span class="line">        objects &#x3D; strings1;</span><br><span class="line">        show(objects ); </span><br><span class="line">    &#125;</span><br><span class="line">    public void show(ArrayList&lt;?&gt; arrayList)&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li></ul><ul><li>ArrayList&lt;?&gt;类不能添加数据，除了null，null都可以。</li><li>可读，不可添加</li></ul><ul><li><p><em><strong>通配符的使用：有限制条件的使用</strong></em><br>List&lt;? extends Person&gt; list1 = null;<br>?可以是person的子类，它就可以进行赋值操作</p></li><li><p><em><strong>实验一</strong></em></p></li></ul><p>1.无太多问题，老是忘改一些东西。</p><ul><li><em><strong>实验二</strong></em></li></ul><p>1.空指针异常，原因就是声明属性了，但是没有去创建容器，导致默认null，所以使用put（）方法时，空指针。<br>2.类型转换异常，原因就是强转，向下转型时，必须原本要转的对象原本是那个类才能转，要不然就会发生类型转换异常，解决方法就是，new ArrayList(map.values()),还可以通过遍历的方式存储；</p>]]></content>
+      
+      
       <categories>
-        <category>Java</category>
+          
+          <category> Java </category>
+          
       </categories>
-      <tags>
-        <tag>Java笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>多线程</title>
-    <url>/2021/11/05/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
-    <content><![CDATA[<ol>
-<li><p>程序(programm)<br>概念：是为完成特定任务、用某种语言编写的一组指令的集合。即指一段静态的代码。</p>
-</li>
-<li><p>进程(process)<br>概念：程序的一次执行过程，或是正在运行的一个程序。<br>说明：进程作为资源分配的单位，系统在运行时会为每个进程分配不同的内存区域</p>
-</li>
-<li><p>线程(thread)<br>概念：进程可进一步细化为线程，是一个程序内部的一条执行路径。<br>说明：线程作为调度和执行的单位，每个线程拥独立的运行栈和程序计数器(pc)，线程切换的开销小。</p>
-</li>
-</ol>
-<p>补充：<br>内存结构：</p>
-<p>进程可以细化为多个线程。<br>每个线程，拥有自己独立的：栈、程序计数器<br>多个线程，共享同一个进程中的结构：方法区、堆。</p>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> Java笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>多线程</title>
+      <link href="/2021/11/05/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+      <url>/2021/11/05/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<ol><li><p>程序(programm)<br>概念：是为完成特定任务、用某种语言编写的一组指令的集合。即指一段静态的代码。</p></li><li><p>进程(process)<br>概念：程序的一次执行过程，或是正在运行的一个程序。<br>说明：进程作为资源分配的单位，系统在运行时会为每个进程分配不同的内存区域</p></li><li><p>线程(thread)<br>概念：进程可进一步细化为线程，是一个程序内部的一条执行路径。<br>说明：线程作为调度和执行的单位，每个线程拥独立的运行栈和程序计数器(pc)，线程切换的开销小。</p></li></ol><p>补充：<br>内存结构：</p><p>进程可以细化为多个线程。<br>每个线程，拥有自己独立的：栈、程序计数器<br>多个线程，共享同一个进程中的结构：方法区、堆。</p>]]></content>
+      
+      
       <categories>
-        <category>财富密码</category>
+          
+          <category> 财富密码 </category>
+          
       </categories>
-      <tags>
-        <tag>Java笔记</tag>
-      </tags>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> Java笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
 </search>
