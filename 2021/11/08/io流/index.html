@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>io流 - 努努力世界更美丽</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="
+IO流I:input ,输入O:output ,输出
+File类的使用用File类的对象代表文件和文件目录（俗称文件夹）  
+
+1.如何创建File对象构造器：1.File(String File,"> 
+    <meta name="author" content="某人"> 
+    <link rel="alternative" href="atom.xml" title="努努力世界更美丽" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">努努力世界更美丽</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://chenzilin.cn"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">io流</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">io流</h1>
+        <div class="stuff">
+            <span>十一月 08, 2021</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Java%E7%AC%94%E8%AE%B0/" rel="tag">Java笔记</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <ul>
+<li><em><strong>IO流</strong></em><br>I:input ,输入<br>O:output ,输出</li>
+<li><em><strong>File类的使用</strong></em><br>用File类的对象代表文件和文件目录（俗称文件夹）  </li>
+</ul>
+<p>1.如何创建File对象<br>构造器：<br>1.File(String Filepath)创建.txt<br>2.File(String parent,String child)创建子目录<br>3.File(String parent,String child)parent表示目录名，child表示创建的.txt的名字<br>New File()时只是对象层面的创建，还没进行内存层面的创建<br>File类声明在java.io包下  </p>
+<p>2.相对路径：相较于某个路径，指明的路径<br>绝对路径：包含盘符的文件或文件目录<br>3.路劲分隔符:windows和dos下\<br>Linux下/</p>
+<ul>
+<li><em><strong>File常见方法</strong></em><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">     File file &#x3D; new File(&quot;czl.txt&quot; );</span><br><span class="line">        System.out.println(file);</span><br><span class="line">        File file1 &#x3D; new File(&quot;C:\\Users\\cilin\\Desktop\\文件\\czl.txt&quot;);</span><br><span class="line">        System.out.println(file1);</span><br><span class="line">        File hh &#x3D; new File(&quot;C:\\Users\\cilin\\Desktop\\文件&quot;);</span><br><span class="line">        System.out.println(hh);</span><br><span class="line">        File hh1 &#x3D; new File(&quot;C:\\Users\\cilin\\Desktop\\文件&quot;, &quot;hh.txt&quot;);</span><br><span class="line">        System.out.println(hh1);</span><br><span class="line">&#x2F;&#x2F;         public String getAbsolutePath()：获取绝对路径 ***</span><br><span class="line">        System.out.println(file.getAbsolutePath());</span><br><span class="line">&#x2F;&#x2F; public String getPath() ：获取路径</span><br><span class="line">        System.out.println(file.getPath());</span><br><span class="line">&#x2F;&#x2F; public String getName() ：获取名称</span><br><span class="line">        System.out.println(file.getName());</span><br><span class="line">&#x2F;&#x2F; public String getParent()：获取上层文件目录路径。若无，返回null   ***</span><br><span class="line">        System.out.println(file.getParent());</span><br><span class="line">&#x2F;&#x2F; public long length() ：获取文件长度（即：字节数）。不能获取目录的长度。</span><br><span class="line">        System.out.println(file.length());</span><br><span class="line">&#x2F;&#x2F; public long lastModified() ：获取最后一次的修改时间，毫秒值</span><br><span class="line">        System.out.println(file.lastModified());</span><br><span class="line">&#x2F;&#x2F; public String[] list() ：获取指定目录下的所有文件或者文件目录的名称数组</span><br><span class="line">        String[] list &#x3D; hh.list();</span><br><span class="line">        for (String o:</span><br><span class="line">             list) &#123;</span><br><span class="line">            System.out.println(o);</span><br><span class="line">        &#125;</span><br><span class="line">&#x2F;&#x2F; public File[] listFiles() ：获取指定目录下的所有文件或者文件目录的File数组</span><br><span class="line">        File[] files &#x3D; hh.listFiles();</span><br><span class="line">        for (File o:</span><br><span class="line">             files ) &#123;</span><br><span class="line">            System.out.println(o);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"> @Test</span><br><span class="line">    public void test01() throws IOException  &#123;</span><br><span class="line">        File file &#x3D; new File(&quot;C:\\Users\\cilin\\Desktop\\文件&quot;);</span><br><span class="line">&#x2F;&#x2F;          public boolean isDirectory()：判断是否是文件目录</span><br><span class="line">        if(file.exists())</span><br><span class="line">        System.out.println(file.isDirectory());</span><br><span class="line">&#x2F;&#x2F; public boolean isFile() ：判断是否是文件</span><br><span class="line">        if(file.exists())</span><br><span class="line">        System.out.println(file.isFile());</span><br><span class="line">&#x2F;&#x2F; public boolean exists() ：判断是否存在</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; public boolean canRead() ：判断是否可读</span><br><span class="line">        System.out.println(file.canRead());</span><br><span class="line">&#x2F;&#x2F; public boolean canWrite() ：判断是否可写</span><br><span class="line">        System.out.println(file.canWrite());</span><br><span class="line">&#x2F;&#x2F; public boolean isHidden() ：判断是否隐藏</span><br><span class="line">        System.out.println(file.isHidden());</span><br><span class="line">&#x2F;&#x2F;        13.1 File 类的使用：常用方法</span><br><span class="line">&#x2F;&#x2F; File类的创建功能</span><br><span class="line">        file &#x3D; new File(&quot;C:\\Users\\cilin\\Desktop\\IO流&quot;,&quot;hh.txt&quot;);</span><br><span class="line">&#x2F;&#x2F; public boolean createNewFile() ：创建文件。若文件存在，则不创建，返回false</span><br><span class="line">        if(!(file.exists()))&#123;</span><br><span class="line">            file.createNewFile();</span><br><span class="line">        &#125;</span><br><span class="line">&#x2F;&#x2F; public boolean mkdir() ：创建文件目录。如果此文件目录存在，就不创建了。</span><br><span class="line">        file &#x3D; new File(&quot;C:\\Users\\cilin\\Desktop\\IO流&quot;,&quot;hi&quot;);</span><br><span class="line">        file.mkdir();</span><br><span class="line">&#x2F;&#x2F;        如果此文件目录的上层目录不存在，也不创建。</span><br><span class="line">        file &#x3D; new File(&quot;C:\\Users\\cilin\\Desktop\\IO流&quot;);</span><br><span class="line">         del(file);</span><br><span class="line">&#x2F;&#x2F; public boolean mkdirs() ：创建文件目录。如果上层文件目录不存在，一并创建</span><br><span class="line">        file &#x3D; new File(&quot;C:\\Users\\cilin\\Desktop\\IO流副本&quot;,&quot;hi&quot;);</span><br><span class="line">        file.mkdirs();</span><br><span class="line">        file.delete();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void del(File e)&#123;</span><br><span class="line">        File[] files &#x3D; e.listFiles();</span><br><span class="line">        for (File o:</span><br><span class="line">             files) &#123;</span><br><span class="line">                  if(o.isFile())&#123;</span><br><span class="line">                      o.delete();</span><br><span class="line">                  &#125;else if(o.isDirectory())&#123;</span><br><span class="line">                      if(o.list().length &#x3D;&#x3D; 0)&#123;</span><br><span class="line">                          o.delete();</span><br><span class="line">                      &#125;else&#123;</span><br><span class="line">                      del(o);&#125;</span><br><span class="line">                  &#125;</span><br><span class="line">                  e.delete() ;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+注意： </li>
+</ul>
+<p>1.删除目录时得把里面内容删除，才能删除目录（可用递归方式）</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='https://www.ytmp3.cn/down/47654.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+				
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
